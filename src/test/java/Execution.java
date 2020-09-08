@@ -25,7 +25,7 @@ public class Execution {
         LoginPage loginPage=new LoginPage(driver);
         loginPage.Login("admin","admin123");
         extentTest.log(Status.PASS,"Login Success");
-        extentTest.addScreenCaptureFromPath(Driver.takeScreenshot());
+        extentTest.addScreenCaptureFromBase64String(Driver.takeScreenshot());
         reports.flush();
         Driver.closeBrowser();
     }

@@ -30,7 +30,10 @@ public class Driver {
                 driver=new FirefoxDriver();
                 break;
             case "ie":
-                driver=new InternetExplorerDriver();
+                System.setProperty("webdriver.ie.driver","src//main//resources//IEDriverServer.exe");
+                DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer();
+                capabilities.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
+                driver=new InternetExplorerDriver(capabilities);
                 break;
         }
         driver.manage().window().maximize();//maximize window

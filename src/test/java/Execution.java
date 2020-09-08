@@ -18,7 +18,7 @@ public class Execution {
     public void Login() throws IOException {
         String path=System.getProperty("user.dir");
         reports=new ExtentReports();
-        extentSparkReporter=new ExtentSparkReporter(path+"\\report.html");
+        extentSparkReporter=new ExtentSparkReporter(path+"\\report\\report.html");
         reports.attachReporter(extentSparkReporter);
         extentTest=reports.createTest("LoginTest");
         WebDriver driver=Driver.openBrowser("ie","https://opensource-demo.orangehrmlive.com/");

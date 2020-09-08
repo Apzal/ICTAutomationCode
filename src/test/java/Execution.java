@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
-
+import java.net.InetAddress;
 public class Execution {
 
 
@@ -19,6 +19,7 @@ public class Execution {
         String path=System.getProperty("user.dir");
         reports=new ExtentReports();
         extentSparkReporter=new ExtentSparkReporter(path+"\\report\\report.html");
+        reports.setSystemInfo("Machine Name", InetAddress.getLocalHost().getHostName());
         reports.attachReporter(extentSparkReporter);
         extentTest=reports.createTest("LoginTest");
         WebDriver driver=Driver.openBrowser("ie","https://opensource-demo.orangehrmlive.com/");

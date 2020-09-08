@@ -1,6 +1,5 @@
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -8,12 +7,16 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import sun.reflect.misc.FieldUtil;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 public class Driver {
 
     private static WebDriver driver=null;
+
     public static WebDriver openBrowser(String browser,String url){
 
         switch (browser.toLowerCase()){
@@ -39,6 +42,15 @@ public class Driver {
     public static void closeBrowser(){
         driver.close();
     }
+
+
+   public static String takeScreenshot() throws IOException {
+      File screenshot= ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+      String fileName=System.getProperty("user.dir")+"\\screenshot\\ss.png";
+      File destinationFile=new File(fileName);
+      FileUtils.copyFile(screenshot,destinationFile);
+      return fileName;
+   }
 
 
 }

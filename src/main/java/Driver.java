@@ -50,10 +50,11 @@ public class Driver {
 
    public static String takeScreenshot() throws IOException {
       File screenshot= ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-      String fileName=System.getProperty("user.dir")+"\\report\\ss.png";
+      String file="ss.png";
+      String fileName=System.getProperty("user.dir")+"\\report\\"+file;
       File destinationFile=new File(fileName);
       FileUtils.copyFile(screenshot,destinationFile);
-      return fileName;
+      return file;
    }
 
 

@@ -21,7 +21,7 @@ public class Execution {
         extentSparkReporter=new ExtentSparkReporter(path+"\\report.html");
         reports.attachReporter(extentSparkReporter);
         extentTest=reports.createTest("LoginTest");
-        WebDriver driver=Driver.openBrowser("ie","https://opensource-demo.orangehrmlive.com/");
+        WebDriver driver=Driver.openBrowser("chrome","https://opensource-demo.orangehrmlive.com/");
         LoginPage loginPage=new LoginPage(driver);
         loginPage.Login("admin","admin123");
         extentTest.log(Status.PASS,"Login Success");

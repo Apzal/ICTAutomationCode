@@ -4,14 +4,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import sun.reflect.misc.FieldUtil;
+
 
 import java.io.File;
 import java.io.IOException;
-import java.util.concurrent.TimeUnit;
+
 
 public class Driver {
 

@@ -20,7 +20,9 @@ public class Driver {
             case "chrome":
                 System.setProperty("webdriver.chrome.driver","src//main//resources//chromedriver.exe");
                 //disabled popup
+                String filepath=System.getProperty("user.dir")+"//src//main//resources//chromedriver.exe";
                 ChromeOptions options=new ChromeOptions();
+                 options.setBinary(filepath);
                 options.setExperimentalOption("useAutomationExtension",false);
                 driver=new ChromeDriver(options);//launch browser
                 break;
